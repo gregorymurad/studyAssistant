@@ -10,8 +10,10 @@ def create_study_plan(topics):
     """
 
     # TODO: Write your Mellea code here
-
-    return "AI study plan goes here"
+    m = mellea.start_session()
+    reply = m.instruct("Create a study plan covering every topic listed below + \n".join(f" {topic}" for topic in topics))
+    text = str(reply)
+    return text
 
 
 def main():
