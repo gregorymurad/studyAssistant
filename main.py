@@ -1,17 +1,17 @@
 import mellea
 
+m = mellea.start_session()
 
 def create_study_plan(topics):
+    prompt=f""" Create a study plan for the following topics:
+    {topics}
+    For each topic, make sure:
+    - it is concise;
+    - explain what the student should review;
+    - organize the topics into a logic study order;
     """
-    Use AI to create a study plan for a list of topics.
-
-    TODO:
-    Please, work on implementing this function using Mellea.
-    """
-
-    # TODO: Write your Mellea code here
-
-    return "AI study plan goes here"
+    response = m.instruct(prompt)
+    return str(response)
 
 
 def main():
@@ -38,3 +38,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+ 
