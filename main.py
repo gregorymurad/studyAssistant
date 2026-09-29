@@ -1,5 +1,6 @@
 import mellea
 
+m = mellea.start_session()
 
 def create_study_plan(topics):
     """
@@ -10,8 +11,9 @@ def create_study_plan(topics):
     """
 
     # TODO: Write your Mellea code here
+    response = m.instruct("Create a study plan for the following topics: " + ", ".join(topics))
 
-    return "AI study plan goes here"
+    return str(response)
 
 
 def main():
