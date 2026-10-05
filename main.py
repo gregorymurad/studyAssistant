@@ -1,5 +1,6 @@
 import mellea
 
+m = mellea.start_session()
 
 def create_study_plan(topics):
     """
@@ -9,9 +10,18 @@ def create_study_plan(topics):
     Please, work on implementing this function using Mellea.
     """
 
-    # TODO: Write your Mellea code here
+    prompt = f"""
+    Create a study plan for the following topics:
+    {topics}
+    For each topic, make sure:
+    - It is concise:
+    - Explain what the student should review:
+    - Organize the topics into a logical study order
+    """
+    response = m.instruct(prompt)
+    return response
 
-    return "AI study plan goes here"
+    
 
 
 def main():
